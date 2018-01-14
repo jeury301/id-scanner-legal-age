@@ -1,14 +1,181 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+	<ion-toolbar color="{{relative_color}}">
+		<ion-buttons start>
+			<button ion-button icon-only (click)="openSettings()" color="{{color}}">
+				<ion-icon name="cog"></ion-icon>
+			</button>
+		</ion-buttons>	
+
+		<ion-title >
+			<div class="dot-{{color}}-color">
+				ID Scanner Pro
+			</div>
+			
+		</ion-title>
+
+		<ion-buttons end>
+			<button ion-button icon-only (click)="presentPopover($event)" color="{{color}}">
+				<ion-icon name="color-palette"></ion-icon>
+			</button>
+		</ion-buttons>	
+
+	</ion-toolbar>
+
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="dot-{{color}}">
+	
+	<ion-card>
+		<ion-card-header>
+			<div style="font-size: 85%" *ngIf="!auto_scan">
+				<ion-icon name="ios-barcode"></ion-icon>
+						Scanned Results 
+			</div>
+			<div style="font-size: 85%" *ngIf="auto_scan">
+				<ion-icon name="ios-barcode"></ion-icon>
+						Scanned Results - auto
+			</div>
+		</ion-card-header>
+
+		
+		<ion-card-content *ngIf="is_set">
+			<div class="reduce-font">
+				<strong>
+					<ion-icon name="contact"></ion-icon>
+					Full Name: {{data_scanned.firstName}} {{data_scanned.lastName}}
+				</strong>
+				<hr/>
+
+				<strong>
+					<ion-icon name="transgender"></ion-icon>
+					Gender: {{data_scanned.sex}}
+				</strong>
+
+				<hr/>
+
+				<strong>
+					<ion-icon name="timer"></ion-icon>
+					DOB: {{data_scanned.dateOfBirth | date: 'mediumDate'}}
+				</strong>
+
+				<hr/>
+
+				<strong>
+					<ion-icon name="trending-down"></ion-icon>
+					Expiration Date: {{data_scanned.dateOfExpiry | date: 'mediumDate'}}
+				</strong>
+			</div>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card>
+		<ion-card-header>
+			<div style="font-size: 85%" *ngIf="!auto_scan">
+				<ion-icon name="stats"></ion-icon>		
+				ID Analysis
+			</div>
+			<div style="font-size: 85%" *ngIf="auto_scan">
+				<ion-icon name="stats"></ion-icon>		
+				ID Analysis - auto
+			</div>
+		</ion-card-header>
+		<ion-card-content *ngIf="is_set">
+			<div class="reduce-font">
+				<strong style="color: green;" *ngIf="data_scanned.age >= 21">
+					Customer age is: {{data_scanned.age}} 
+					<ion-icon name="beer"></ion-icon>
+					<ion-icon name="checkmark"></ion-icon>
+					<ion-icon name="checkmark"></ion-icon>
+				</strong>
+				
+				<strong style="color: orange;" *ngIf="data_scanned.age >= 18 && data_scanned.age <=20">
+					Customer age is: {{data_scanned.age}}
+					<ion-icon name="checkmark"></ion-icon>
+				</strong>
+				<strong style="color: red;" *ngIf="data_scanned.age < 18">
+					Customer age is: {{data_scanned.age}}
+					<ion-icon name="no-smoking"></ion-icon>
+					<ion-icon ios="ios-close" md="close"></ion-icon>
+					<ion-icon ios="ios-close" md="close"></ion-icon>
+				</strong>
+				<hr/>
+
+				<strong style="color: green;" *ngIf="data_scanned.age > 21">
+					Category: Adult
+					<ion-icon name="checkmark"></ion-icon>
+					<ion-icon name="checkmark"></ion-icon>
+				</strong>
+				<strong style="color: orange;" *ngIf="data_scanned.age >= 18 && data_scanned.age <=20">
+					Category: Young Adult
+					<ion-icon name="checkmark"></ion-icon>
+				</strong>
+				<strong style="color: red;" *ngIf="data_scanned.age < 18">
+					Category: Minor
+					<ion-icon ios="ios-close" md="close"></ion-icon>
+					<ion-icon ios="ios-close" md="close"></ion-icon>
+				</strong>
+
+				<hr/>
+
+				<strong style="color: orange;" *ngIf="data_scanned.is_expired == 'Expired'">
+					ID Status: {{data_scanned.is_expired}}
+					<ion-icon ios="ios-close" md="close"></ion-icon>
+					<ion-icon ios="ios-close" md="close"></ion-icon>
+				</strong>
+				<strong style="color: green;" *ngIf="data_scanned.is_expired != 'Expired'">
+					ID Status: {{data_scanned.is_expired}}
+					<ion-icon name="checkmark"></ion-icon>
+					<ion-icon name="checkmark"></ion-icon>
+				</strong>
+			</div>
+
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card>
+      <ion-card-header>
+        Bar Chart
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Doughnut Chart
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #doughnutCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+ 
+    <ion-card>
+      <ion-card-header>
+        Line Chart
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #lineCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+    
+
+
 </ion-content>
+
+<ion-footer no-shadow>
+	<ion-toolbar position="bottom" color="{{relative_color}}">
+		<ion-row>
+			<ion-col>
+				<button class="fix-case" ion-button outline=true round=true large=true color="{{color}}" (click)="barcodeScan()" block>Scan ID</button>
+			</ion-col>
+			<ion-col>
+				<button class="fix-case" ion-button icon-left outline=true round=true large=true color="{{color}}" (click)="reloadPage()" block>
+					<ion-icon name="close" ></ion-icon>
+					Clear
+				</button>
+			</ion-col>
+		</ion-row>
+		
+	</ion-toolbar>
+</ion-footer>

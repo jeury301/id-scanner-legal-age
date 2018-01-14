@@ -38,7 +38,21 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  white:      #FFFFFF,
+  tan:        #FF5722,
+  grey:       #BDBDBD,
+  black:      #000000,
+  blue:		  #42A5F5,
+  red:        #EF5350,
+  green:      #9CCC65,
+  purple:     #AB47BC,
+  cyan:       #26C6DA,
+  yellow:     #FFEE58,
+  orange:     #FFA726,
+  pink:       #EC407A,
+  brown:      #8D6E63,
+  indigo:     #5C6BC0
 );
 
 
@@ -46,9 +60,11 @@ $colors: (
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-
-
-
+$card-ios-background-color: slategray;
+$card-md-background-color: slategray;
+$card-wp-background-color: slategray;
+$popover-ios-background: #B3E5FC;
+$list-ios-margin-top: 5px;
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here

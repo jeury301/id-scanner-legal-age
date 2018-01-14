@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
 
 ## How to use this template
@@ -24,3 +25,7 @@ $ ionic cordova run ios
 
 Substitute ios for android if not on a Mac.
 
+=======
+# id-scanner-legal-age
+First entrepreneurial undergoing - An ID scanner mobile app to detect legal age and access to adulthood
+>>>>>>> d31ee9cabb8214188ed1467bb2664a14eb123ea9

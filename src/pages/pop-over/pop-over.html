@@ -1,0 +1,47 @@
+<ion-list radio-group  class="popover-page">
+	<ion-row>
+	  <ion-list-header class="fix-case">Color Palette</ion-list-header> 
+	</ion-row>
+	<ion-row class="row-dots">
+		<ion-col>
+			<button ion-button="dot" (click)="changeColor('white')" class="dot-white" [class.selected]="background == 'white'"></button>
+		</ion-col>
+		<ion-col>
+			<button ion-button="dot" (click)="changeColor('tan')" class="dot-tan" [class.selected]="background == 'tan'"></button>
+		</ion-col>
+		<ion-col>
+			<button ion-button="dot" (click)="changeColor('grey')" class="dot-grey" [class.selected]="background == 'grey'"></button>
+		</ion-col>
+		<ion-col>
+			<button ion-button="dot" (click)="changeColor('black')" class="dot-black" [class.selected]="background == 'black'"></button>
+		</ion-col>
+	</ion-row>
+	<ion-row class="row-dots">
+		<ion-col>
+			<button ion-button="dot" (click)="changeColor('blue')" class="dot-blue" [class.selected]="background == 'blue'"></button>
+		</ion-col>
+		<ion-col>
+			<button ion-button="dot" (click)="changeColor('red')" class="dot-red" [class.selected]="background == 'red'"></button>
+		</ion-col>
+		<ion-col>
+			<button ion-button="dot" (click)="changeColor('green')" class="dot-green" [class.selected]="background == 'green'"></button>
+		</ion-col>
+		<ion-col>
+			<button ion-button="dot" (click)="changeColor('purple')" class="dot-purple" [class.selected]="background == 'purple'"></button>
+		</ion-col>
+	</ion-row>
+	<ion-row class="row-dots">
+		<ion-col>
+			<button ion-button="dot" (click)="changeColor('yellow')" class="dot-yellow" [class.selected]="background == 'yellow'"></button>
+		</ion-col>
+		<ion-col>
+			<button ion-button="dot" (click)="changeColor('orange')" class="dot-orange" [class.selected]="background == 'orange'"></button>
+		</ion-col>
+		<ion-col>
+			<button ion-button="dot" (click)="changeColor('pink')" class="dot-pink" [class.selected]="background == 'pink'"></button>
+		</ion-col>
+		<ion-col>
+			<button ion-button="dot" (click)="changeColor('indigo')" class="dot-indigo" [class.selected]="background == 'indigo'"></button>
+		</ion-col>
+	</ion-row>
+</ion-list>
