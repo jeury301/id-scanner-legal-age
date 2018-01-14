@@ -1,31 +1,39 @@
-<<<<<<< HEAD
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
 
-## How to use this template
+# id-scanner-legal-age
+First entrepreneurial undergoing - An ID scanner mobile app to detect legal age and access to adulthood
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+## How to run this app
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+*This app was created using an ionic template.* More info: https://ionicframework.com/
 
 ### With the Ionic CLI:
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+Navigate to the root of the folder and execute the following commad (nodeJS and ionic are requirements):
 
 ```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
+$ ionic cordova run [ios, android]
 ```
 
-Then, to run it, cd into `myBlank` and run:
+To rebuild the project, execute the following:
 
 ```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
+$ ionic cordova build [ios, android]
 ```
 
-Substitute ios for android if not on a Mac.
+## Application UI
 
-=======
-# id-scanner-legal-age
-First entrepreneurial undergoing - An ID scanner mobile app to detect legal age and access to adulthood
->>>>>>> d31ee9cabb8214188ed1467bb2664a14eb123ea9
+### Home
+![Alt text](/images/home.PNG?raw=true "Home")
+
+### Color Paletter
+![Alt text](/images/color-palette.PNG?raw=true "Color Palette")
+
+### Scannner
+![Alt text](/images/scan.PNG?raw=true "Scanner")
+
+### Scan Results
+![Alt text](/images/result.PNG?raw=true "Scan Results")
+
+### Settings
+![Alt text](/images/settings.PNG?raw=true "Settings")
+
