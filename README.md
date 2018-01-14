@@ -23,17 +23,17 @@ $ ionic cordova build [ios, android]
 ## Application UI
 
 ### Home
-![Alt text](/images/home.PNG?raw=true "Home")
+![Alt text](/images/home.PNG "Home" )
 
 ### Color Palette
-![Alt text](/images/color-palette.PNG?raw=true "Color Palette")
+![Alt text](/images/color-palette.PNG "Color Palette")
 
 ### Scannner
-![Alt text](/images/scan.PNG?raw=true "Scanner")
+![Alt text](/images/scan.PNG "Scanner")
 
 ### Scan Results
-![Alt text](/images/result.PNG?raw=true "Scan Results")
+![Alt text](/images/result.PNG "Scan Results")
 
 ### Settings
-![Alt text](/images/settings.PNG?raw=true "Settings")
+![Alt text](/images/settings.PNG "Settings")
 
