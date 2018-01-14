@@ -25,7 +25,7 @@ $ ionic cordova build [ios, android]
 ### Home
 ![Alt text](/images/home.PNG?raw=true "Home")
 
-### Color Paletter
+### Color Palette
 ![Alt text](/images/color-palette.PNG?raw=true "Color Palette")
 
 ### Scannner
